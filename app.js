@@ -1,5 +1,4 @@
-const port = 3000;
-const hostname = '127.0.0.1';
+const port = process.env.PORT || 5000;
 
 const express = require('express');
 const exphbs = require('express-handlebars');
@@ -22,6 +21,6 @@ app.use("/", guess);
 //error-handling middleware
 errors(app);
 
-app.listen(port, hostname, (req, res) => {
+app.listen(port, (req, res) => {
     console.log('App is listening on port: ' + port);
 })
