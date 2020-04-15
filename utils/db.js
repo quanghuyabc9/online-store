@@ -2,11 +2,11 @@ const mysql = require('mysql');
 
 function createConnection() {
     return mysql.createConnection({
-        host: 'localhost',
+        host: 'sql9.freemysqlhosting.net',
         port: '3306',
-        user: 'root',
-        password: '',
-        database: 'qlbh'
+        user: 'rootsql9333634',
+        password: 'BlhTu4RBiD',
+        database: 'sql9333634'
     });
 }
 
