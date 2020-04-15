@@ -4,7 +4,7 @@ function createConnection() {
     return mysql.createConnection({
         host: 'sql9.freemysqlhosting.net',
         port: '3306',
-        user: 'rootsql9333634',
+        user: 'sql9333634',
         password: 'BlhTu4RBiD',
         database: 'sql9333634'
     });
