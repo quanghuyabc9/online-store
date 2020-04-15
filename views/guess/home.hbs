@@ -1,0 +1,95 @@
+{{#section 'css'}}
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+{{/section}}
+
+{{#section 'js'}}
+<script src="/js/jquery-3.4.1.slim.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/popper.min.js"></script>
+{{/section}}
+
+{{#section 'title'}}
+Online Store
+{{/section}}
+
+<div class="container-fluid">
+    <div class="row bg-dark">
+        <div class="col-1">
+
+        </div>
+        <div class="col-10">
+            {{>header}}
+        </div>
+        <div class="col-1">
+
+        </div>
+    </div>
+    <div class="row mt-2" style="background-color: #f5f5f5;">
+        <div class="col-1">
+
+        </div>
+        <div class="col-10">
+            <div class="row">
+                <div class="col-3">
+                    <div class="list-group">
+                        {{#each categories}}
+                        <a href="/categories/{{this.CatID}}/1"
+                            class="list-group-item list-group-item-action {{#if this.isActive}}active{{/if}}">{{this.CatName}}</a>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="container-fluid">
+                        <div class="row">
+                            {{#each productsOnPage}}
+                            <div class="col-3 mb-3">
+                                <div class="card h-100">
+                                    <img src="/images/{{this.ProID}}/main.jpg" class="card-img-top" alt="product">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{this.ProName}}</h5>
+                                        <p class="card-text">{{this.TinyDes}}</p>
+                                    </div>
+                                    <div class="card-footer bg-danger">
+                                        <small class="text-white">Price: {{this.Price}}</small></br>
+                                        <small class="text-white">Quantity: {{this.Quantity}}</small>
+                                    </div>
+                                    <a href="/products/{{this.ProID}}" class="stretched-link"></a>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item  {{#if previous.isDisabled}}disabled{{/if}}">
+                                        <a class="page-link" href="/categories/{{previous.CatID}}/{{previous.pageNumber}}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    {{#each pagination}}
+                                        <li class="page-item {{#if this.isActive}}active{{/if}}"><a class="page-link" href="/categories/{{this.CatID}}/{{this.pageNumber}}">{{this.pageNumber}}</a></li>
+                                    {{/each}}         
+                                    {{!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li> --}}
+                                    <li class="page-item {{#if next.isDisabled}}disabled{{/if}}">
+                                        <a class="page-link" href="/categories/{{next.CatID}}/{{next.pageNumber}}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {{>footer}}
+        </div>
+    </div>
+</div>
