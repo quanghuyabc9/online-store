@@ -1,13 +1,17 @@
 {
   "name": "online-store",
   "version": "1.0.0",
-  "description": "Social trading platform, this is the demo project for mvc",
+  "description": "This is the demo project for mvc pattern",
+  "homepage": "https://github.com/quanghuyabc9/online-store/blob/master/README.md",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
   "author": "quanghuyabc9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quanghuyabc9/online-store"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
